@@ -12,23 +12,12 @@ public class TextBoxTest extends BaseTest {
         // Creating the object of the page class
         TextBoxPage text = new TextBoxPage(driver);
 
-        /*
-        We are here to write the the method which will pass the values to the
-        to the TextBoxPage Class method to perform the action.
-         */
-
         text.textboxSetup()
                 .fillFullName("Uma Shankar")
-                .fillEmail("abc.123@company.com")
+                .fillEmail("umashankar.123@automation.com")
                 .fillCurrentAddress("Gurgaon, Haryana , India")
                 .fillPermanentAddress("Sheopur, Madhya Pradesh India");
         text.submit();
         System.out.println(text.outputOfForm());
-
-
-
-
     }
-
-
 }
