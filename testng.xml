@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="DemoQA-Automation">
+    <test name="MyTest">
+        <classes>
+            <!-- Specify the full class name including the package -->
+            <class name="Elements.TextBoxTest"/>
+            <class name="Elements.CheckBoxTest"/>
+            <class name="Elements.RadioButtonTest"/>
+        </classes>
+    </test>
+</suite>

@@ -4,13 +4,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import pages.Consonants;
 import utils.reusuables;
 
 public class TextBoxPage extends CardAccessPage {
 
     private WebDriver driver;
 
-    @FindBy(xpath = "//div[@class='element-list collapse show']//ul[@class = 'menu-list']//li[@id='item-0']")
+
+    @FindBy(xpath =  Consonants.elementList + "//li[@id='item-0']")
     private WebElement TextBoxItem;
     @FindBy(id = "userName")
     private WebElement fullName;
