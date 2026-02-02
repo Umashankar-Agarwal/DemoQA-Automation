@@ -1,0 +1,10 @@
+# .coderabbit.yaml
+reviews:
+  profile: "chill" # Options: chill, assertive (use assertive for stricter Java standards)
+  request_changes_workflow: false
+instructions: |
+  Focus on Java Selenium best practices:
+  - Ensure 'WebDriver' instances are properly managed/closed.
+  - Check for 'Thread.sleep()' and suggest 'WebDriverWait' instead.
+  - Verify 'Page Object Model' structure for maintainability.
+  - Flag hardcoded locators or URLs.
