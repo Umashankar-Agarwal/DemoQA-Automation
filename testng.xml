@@ -1,8 +1,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="DemoQA-Automation">
+    <parameter name="url" value="https://demoqa.com/"/>
     <test name="MyTest">
         <classes>
             <!-- Specify the full class name including the package -->
+            <class name="Elements.TextBoxTest"/>
             <class name="Elements.ButtonsTest"/>
         </classes>
     </test>
