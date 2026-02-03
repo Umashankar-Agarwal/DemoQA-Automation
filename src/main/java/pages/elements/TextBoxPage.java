@@ -14,7 +14,6 @@ public class TextBoxPage extends CardAccessPage {
 
     private final WebDriver driver;
 
-
     @FindBy(xpath = Consonants.elementList + "//li[@id='item-0']")
     private WebElement TextBoxItem;
     @FindBy(id = "userName")
@@ -44,25 +43,25 @@ public class TextBoxPage extends CardAccessPage {
     }
 
     public TextBoxPage fillFullName(String name) {
-        log.info("Enter your Name : {}", name);
+        log.info("Enter your Name");
         fullName.sendKeys(name);
         return this;
     }
 
     public TextBoxPage fillEmail(String email) {
-        log.info("Enter your Email : {}",email);
+        log.info("Enter your Email");
         userEmail.sendKeys(email);
         return this;
     }
 
     public TextBoxPage fillCurrentAddress(String addressCurrent) {
-        log.info("Enter your current Address : {}",currentAddress);
+        log.info("Enter your current Address");
         currentAddress.sendKeys(addressCurrent);
         return this;
     }
 
     public void fillPermanentAddress(String addressPermanent) {
-        log.info("Enter your permanent address : {}", permanentAddress);
+        log.info("Enter your permanent address");
         permanentAddress.sendKeys(addressPermanent);
     }
 
@@ -85,6 +84,4 @@ public class TextBoxPage extends CardAccessPage {
                 {"Ravi2", "Ravitest2@yahoo.com", "Chennai", "Kota"}
         };
     }
-
-
 }

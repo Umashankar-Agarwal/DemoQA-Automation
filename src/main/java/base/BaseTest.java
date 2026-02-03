@@ -22,9 +22,9 @@ public class BaseTest  {
         driver = new ChromeDriver();
         log.info("Initiating the browser instance");
         driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         log.info("Navigating to the {} URL: ", url);
         driver.get(url);
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
     }
 
     @AfterMethod
