@@ -76,12 +76,4 @@ public class TextBoxPage extends CardAccessPage {
         log.info("Taking the output");
         return output.getText();
     }
-
-    @DataProvider(name = "TextBoxData")
-    public Object[][] TextBoxDataProvider() {
-        return new Object[][]{
-                {"Uma Shankar", "umatest1@gmail.com", "Gurgaon, Haryana", "Sheopur, Madhya Pradesh"},
-                {"Ravi2", "Ravitest2@yahoo.com", "Chennai", "Kota"}
-        };
-    }
 }
