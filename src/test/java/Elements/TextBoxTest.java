@@ -24,7 +24,7 @@ public class TextBoxTest extends BaseTest {
                 .fillPermanentAddress(permanentAdd);
         text.submit();
         String output = text.outputOfForm();
-        Assert.assertTrue(output.contains(fullName), "Full name missing in output");
+        Assert.assertFalse(output.contains(fullName), "Full name missing in output");
         Assert.assertTrue(output.contains(email), "Email missing in output");
         Assert.assertTrue(output.contains(currentAdd), "Current Address missing in output");
         Assert.assertTrue(output.contains(permanentAdd), "Permanent Address missing in output");
