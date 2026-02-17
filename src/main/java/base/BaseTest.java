@@ -8,8 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
 import java.time.Duration;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 @Log4j2
 public class BaseTest  {
 

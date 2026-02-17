@@ -41,18 +41,8 @@ public class ExtentReportManager extends BaseTest implements ITestListener {
     }
 
     public void onTestFailure(ITestResult result) {
-
-        if (result.getStatus() == ITestResult.FAILURE){
-            String screenShotPath = null;
-            try {
-                screenShotPath = Screenshot.captureScreenshot(driver, result.getName());
-            } catch (IOException e) {
-                throw new RuntimeException("Screenshot was not captured");
-            }
-            test.fail("Test Case Failed: " + result.getName());
-            test.fail(result.getThrowable());
-            test.addScreenCaptureFromPath(screenShotPath);
-        }
+        test = extent.createTest(result.getName());
+        test.log(Status.FAIL, "Test is failed due to : " + result.getThrowable());
     }
 
     public void onTestSkipped(ITestResult result) {

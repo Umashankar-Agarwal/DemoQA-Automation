@@ -12,7 +12,6 @@ import utils.Reusuables;
 @Log4j2
 public class ButtonsPage extends CardAccessPage {
 
-
     public final WebDriver driver;
 
     public ButtonsPage(WebDriver driver) {
@@ -21,19 +20,19 @@ public class ButtonsPage extends CardAccessPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = Consonants.elementList + "//li[@id='item-4']")
+    @FindBy(xpath = "//a[@href='/buttons']")
     WebElement buttonElement;
-    @FindBy(id = "doubleClickBtn")
+    @FindBy(css = "#doubleClickBtn")
     WebElement doubleClickButton;
-    @FindBy(id = "rightClickBtn")
+    @FindBy(css = "#rightClickBtn")
     WebElement rightClickButton;
     @FindBy(xpath = "//button[text() = 'Click Me']")
     WebElement clickMeButton;
-    @FindBy(id = "doubleClickMessage")
+    @FindBy(css = "#doubleClickMessage")
     WebElement doubleClickMessage;
-    @FindBy(id = "rightClickMessage")
+    @FindBy(css = "#rightClickMessage")
     WebElement rightClickMessage;
-    @FindBy(id = "dynamicClickMessage")
+    @FindBy(css = "#dynamicClickMessage")
     WebElement dynamicClickMessage;
 
     public void buttonSetup() {
