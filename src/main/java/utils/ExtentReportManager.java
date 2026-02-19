@@ -1,58 +1,41 @@
 package utils;
 
-import base.BaseTest;
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import org.openqa.selenium.WebDriver;
-import org.testng.ITestContext;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
 
-import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
-public class ExtentReportManager extends BaseTest implements ITestListener {
-    public ExtentSparkReporter sparkReporter; // UI of the report
-    public ExtentReports extent; //populate common info on the report
-    public ExtentTest test; // creating test case entries in the report and update status of the test methods
+public class ExtentReportManager {
 
-    public void onStart(ITestContext context) {
+    private static ExtentReports extent;
 
-        // UI of the Report
-        sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "/reports/myReport.html");//speci
-        sparkReporter.config().setDocumentTitle("Demo QA : Automation Project E2E"); // Title of report
-        sparkReporter.config().setReportName("Functional Testing"); // name of the report
-        sparkReporter.config().setTheme(Theme.DARK);
+    public static ExtentReports getReportInstance() {
 
-        extent = new ExtentReports();
-        extent.attachReporter(sparkReporter);
+        if (extent == null) {
 
-        extent.setSystemInfo("Website", "Demo : QA ");
-        extent.setSystemInfo("Tester Name", "Uma Shankar Agarwal");
-        extent.setSystemInfo("os", "Windows11");
-        extent.setSystemInfo("Browser name", "Chrome");
-    }
+            String timeStamp = LocalDateTime.now()
+                    .format(DateTimeFormatter.ofPattern("yyyy.MM.dd.HH.mm.ss"));
 
-    public void onTestSuccess(ITestResult result) {
-        test = extent.createTest(result.getName()); //create the entry in the report
-        test.log(Status.PASS, "Test Case Passed is :" + result.getName());  // update the status
-    }
+            String path = System.getProperty("user.dir")
+                    + "/reports/ExtentReport_" + timeStamp + ".html";
 
-    public void onTestFailure(ITestResult result) {
-        test = extent.createTest(result.getName());
-        test.log(Status.FAIL, "Test is failed due to : " + result.getThrowable());
-    }
 
-    public void onTestSkipped(ITestResult result) {
-        test = extent.createTest(result.getName()); //create the entry in the report
-        test.log(Status.SKIP, "Test Case skipped is :" + result.getName());  // update the status
-    }
+            ExtentSparkReporter sparkReporter = new ExtentSparkReporter(path);
+            sparkReporter.config().setDocumentTitle("Demo QA : Automation Project E2E"); // Title of report
+            sparkReporter.config().setReportName("Functional Testing"); // name of the report
+            sparkReporter.config().setTheme(Theme.DARK);
 
-    public void onFinish(ITestContext context) {
-        extent.flush();
+            extent = new ExtentReports();
+            // This will map the required details to be added on the report
+            extent.attachReporter(sparkReporter);
+            extent.setSystemInfo("Website", "Demo : QA ");
+            extent.setSystemInfo("Tester Name", "Uma Shankar Agarwal");
+            extent.setSystemInfo("os", "Windows11");
+            extent.setSystemInfo("Browser name", "Chrome");
+        }
 
+        return extent;
     }
 }
-

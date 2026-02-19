@@ -13,6 +13,11 @@ import java.time.Duration;
 public class BaseTest  {
 
     protected WebDriver driver;
+
+    public WebDriver getDriver() {
+        return driver;
+    }
+
     @Parameters({"url"})
     @BeforeMethod
     public void setup(String url) {

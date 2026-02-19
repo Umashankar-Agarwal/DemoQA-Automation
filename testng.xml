@@ -2,7 +2,7 @@
 <suite name="DemoQA-Automation">
     <parameter name="url" value="https://demoqa.com/"/>
     <listeners>
-        <listener class-name="utils.ExtentReportManager"/>
+        <listener class-name="listeners.ExtentListeners"/>
     </listeners>
     <test name="MyTest">
         <classes>
