@@ -17,7 +17,7 @@ public class CardAccessPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//div[@class = 'category-cards']/div[1]")
+    @FindBy(xpath = "//a[contains(@href, 'elements')]")
     protected WebElement elementCard;
 
     public void elementsCard() {

@@ -14,7 +14,7 @@ public class TextBoxPage extends CardAccessPage {
 
     private final WebDriver driver;
 
-    @FindBy(xpath = Consonants.elementList + "//li[@id='item-0']")
+    @FindBy(xpath = "//a[@href='/text-box']")
     private WebElement TextBoxItem;
     @FindBy(id = "userName")
     private WebElement fullName;
