@@ -41,7 +41,7 @@ public class TextBoxPage extends CardAccessPage {
         Reusuables.scrollToTop(driver);
         log.info("Click on Text Box Item");
         TextBoxItem.click();
-         return this;
+        return this;
     }
 
     public TextBoxPage fillFullName(String name) {
