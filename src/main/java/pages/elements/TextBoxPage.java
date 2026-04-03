@@ -37,9 +37,11 @@ public class TextBoxPage extends CardAccessPage {
 
     public TextBoxPage textboxSetup() {
         elementsCard();
+        Reusuables.waitElementClickable(TextBoxItem,driver,5);
+        Reusuables.scrollToTop(driver);
         log.info("Click on Text Box Item");
         TextBoxItem.click();
-        return this;
+         return this;
     }
 
     public TextBoxPage fillFullName(String name) {

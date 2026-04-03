@@ -34,9 +34,14 @@ public class Reusuables {
         js.executeScript("window.scrollTo(0, 500)");
     }
 
+    public static void scrollToTop(WebDriver driver){
+        js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, 0);");
+    }
 
-    public static void waitElementClickable(WebElement element, WebDriver driver){
-        wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+
+    public static void waitElementClickable(WebElement element, WebDriver driver,int seconds){
+        wait = new WebDriverWait(driver,Duration.ofSeconds(seconds));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 }

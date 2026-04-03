@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import static utils.Reusuables.scrollIntoView;
+import static utils.Reusuables.*;
 
 @Log4j2
 public class CardAccessPage {
