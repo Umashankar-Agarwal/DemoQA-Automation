@@ -1,5 +1,6 @@
 package base;
 
+import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,14 +10,11 @@ import org.testng.annotations.Parameters;
 
 import java.time.Duration;
 
+@Getter
 @Log4j2
 public class BaseTest  {
 
     protected WebDriver driver;
-
-    public WebDriver getDriver() {
-        return driver;
-    }
 
     @Parameters({"url"})
     @BeforeMethod

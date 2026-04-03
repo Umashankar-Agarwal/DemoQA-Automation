@@ -37,6 +37,7 @@ public class ButtonsPage extends CardAccessPage {
 
     public void buttonSetup() {
         elementsCard();
+        Reusuables.waitElementClickable(buttonElement,driver,5);
         log.info("Click on button element");
         buttonElement.click();
         Reusuables.scrollIntoView(buttonElement, driver);
@@ -45,10 +46,10 @@ public class ButtonsPage extends CardAccessPage {
     public void buttonActions() {
         Actions buttonAction = new Actions(driver);
         log.info("Testing the Double Click button");
-        buttonAction.doubleClick(doubleClickButton).perform();
+        buttonAction.doubleClick(doubleClickButton).build().perform();
         System.out.println(doubleClickMessage.getText());
         log.info("Testing the Right Click button");
-        buttonAction.contextClick(rightClickButton).perform();
+        buttonAction.contextClick(rightClickButton).build().perform();
         System.out.println(rightClickMessage.getText());
         log.info("Testing ClickMe button");
         Reusuables.hiddenElementClick(driver, clickMeButton);

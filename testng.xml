@@ -2,7 +2,9 @@
 <suite name="DemoQA-Automation">
     <parameter name="url" value="https://demoqa.com/"/>
     <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
         <listener class-name="listeners.ExtentListeners"/>
+        <listener class-name="listeners.AllureListener"/>
     </listeners>
     <test name="MyTest">
         <classes>
